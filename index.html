@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Tahir Khan — Advocate & Tax Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --primary:  #1B2A4A;
+  --accent:   #C9A84C;
+  --bg:       #F5F3EE;
+  --surface:  #FFFFFF;
+  --text:     #4A5568;
+  --border:   #E8E0D0;
+  --accent-light: #f0e8d0;
+  --primary-light: #243660;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;color:var(--primary);line-height:1.25}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section-alt{background:var(--surface)}
+.section-label{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:16px;color:var(--primary)}
+.section-line{width:48px;height:2px;background:var(--accent);margin-bottom:32px}
+.section-subtitle{max-width:560px;color:var(--text);font-size:1.05rem;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:all .25s ease;border:none}
+.btn-gold{background:var(--accent);color:var(--primary)}
+.btn-gold:hover{background:#d4b05c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.35)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--primary);padding:0 24px;transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.25)}
+.nav-inner{max-width:1160px;margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.logo-monogram{width:42px;height:42px;background:var(--accent);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--primary);letter-spacing:.02em;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column}
+.logo-name{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;line-height:1.2}
+.logo-title{font-size:.68rem;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;color:rgba(255,255,255,.75);letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-cta{font-size:.82rem !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:#fff;transition:all .3s}
+
+/* HERO */
+.hero{background:var(--primary);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(201,168,76,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(255,255,255,.03) 0%,transparent 50%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;padding:80px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1.5px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,5vw,3.8rem);color:#fff;margin-bottom:24px;line-height:1.15}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);margin-bottom:40px;max-width:440px;line-height:1.75}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1)}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--accent);line-height:1;margin-bottom:4px}
+.hero-stat-label{font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.06em}
+.hero-visual{display:flex;flex-direction:column;gap:20px}
+.hero-card-main{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:32px;backdrop-filter:blur(10px)}
+.hero-card-main .card-icon{width:48px;height:48px;background:rgba(201,168,76,.15);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--accent);font-size:1.2rem}
+.hero-card-main h3{color:#fff;font-size:1.1rem;margin-bottom:8px}
+.hero-card-main p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.65}
+.hero-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hero-mini-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:20px;transition:border-color .2s}
+.hero-mini-card:hover{border-color:rgba(201,168,76,.3)}
+.hero-mini-card .mini-icon{font-size:1.2rem;color:var(--accent);margin-bottom:10px}
+.hero-mini-card p{font-size:.82rem;color:rgba(255,255,255,.55)}
+.hero-mini-card strong{display:block;font-size:.9rem;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:2px;font-family:'DM Sans',sans-serif}
+.notice-banner{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:16px 20px;display:flex;align-items:center;gap:12px}
+.notice-banner i{color:var(--accent);font-size:1rem;flex-shrink:0}
+.notice-banner p{font-size:.85rem;color:rgba(255,255,255,.7)}
+.notice-banner strong{color:var(--accent)}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:32px 28px;transition:all .28s ease;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(27,42,74,.08)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-icon{width:48px;height:48px;background:var(--accent-light);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent);font-size:1.15rem;transition:background .2s}
+.service-card:hover .service-icon{background:var(--accent);color:#fff}
+.service-card h3{font-size:1rem;margin-bottom:10px;font-family:'Playfair Display',serif}
+.service-card p{font-size:.875rem;color:var(--text);line-height:1.65}
+
+/* WHY CHOOSE */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.trust-card{text-align:center;padding:40px 24px;border:1px solid var(--border);border-radius:4px;background:var(--surface);transition:box-shadow .25s}
+.trust-card:hover{box-shadow:0 8px 32px rgba(27,42,74,.07)}
+.trust-icon{width:64px;height:64px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--accent);font-size:1.4rem}
+.trust-card h3{font-size:1.05rem;margin-bottom:8px}
+.trust-card p{font-size:.865rem;color:var(--text);line-height:1.65}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-image-wrap{position:relative}
+.about-image-placeholder{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#1B2A4A 0%,#243660 100%);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.about-image-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(201,168,76,.1) 0%,transparent 60%)}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--accent);border-radius:4px;padding:20px 24px;text-align:center}
+.about-badge-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--primary);font-weight:700;line-height:1}
+.about-badge-text{font-size:.72rem;color:var(--primary);font-weight:500;letter-spacing:.06em}
+.credentials{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 32px}
+.credential-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);border:1px solid var(--border);border-radius:2px;padding:6px 12px;font-size:.8rem;color:var(--primary);font-weight:500}
+.credential-tag i{color:var(--accent);font-size:.8rem}
+.about-bio{font-size:1rem;line-height:1.8;color:var(--text);margin-bottom:20px}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;left:calc(33.33% / 2 + 24px);right:calc(33.33% / 2 + 24px);height:1px;background:var(--border);z-index:0}
+.process-step{text-align:center;padding:0 32px;position:relative;z-index:1}
+.step-number{width:80px;height:80px;background:var(--surface);border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--primary);font-weight:600;position:relative;transition:all .3s}
+.process-step:hover .step-number{border-color:var(--accent);background:var(--accent);color:#fff}
+.step-icon{position:absolute;bottom:-4px;right:-4px;width:26px;height:26px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem}
+.process-step h3{font-size:1.15rem;margin-bottom:10px}
+.process-step p{font-size:.88rem;color:var(--text);line-height:1.65}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:36px 28px;position:relative}
+.testimonial-card::before{content:'\201C';position:absolute;top:16px;right:24px;font-family:'Playfair Display',serif;font-size:5rem;color:var(--accent-light);line-height:1}
+.stars{color:var(--accent);font-size:.85rem;letter-spacing:2px;margin-bottom:16px}
+.testimonial-text{font-size:.95rem;line-height:1.8;color:var(--text);margin-bottom:24px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-avatar{width:44px;height:44px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;flex-shrink:0}
+.author-name{font-weight:500;font-size:.9rem;color:var(--primary)}
+.author-label{font-size:.78rem;color:var(--text)}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{width:100%;background:none;border:none;text-align:left;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Playfair Display',serif;font-size:1rem;color:var(--primary);transition:color .2s}
+.faq-question:hover{color:var(--accent)}
+.faq-question .faq-icon{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;color:var(--accent);transition:all .25s}
+.faq-item.open .faq-icon{background:var(--accent);color:#fff;transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-answer{max-height:300px;padding-bottom:20px}
+.faq-answer p{font-size:.93rem;color:var(--text);line-height:1.8}
+
+/* CONTACT */
+.contact-section{background:var(--primary);padding:96px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-info .section-label{color:var(--accent)}
+.contact-info .section-title{color:#fff}
+.contact-info .section-line{background:var(--accent)}
+.contact-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:40px}
+.contact-details{display:flex;flex-direction:column;gap:20px}
+.contact-detail-item{display:flex;align-items:flex-start;gap:16px}
+.contact-detail-icon{width:42px;height:42px;background:rgba(201,168,76,.15);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:.95rem;flex-shrink:0}
+.contact-detail-label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.contact-detail-value{font-size:.95rem;color:rgba(255,255,255,.85)}
+.contact-detail-value a{color:rgba(255,255,255,.85);transition:color .2s}
+.contact-detail-value a:hover{color:var(--accent)}
+.social-links{display:flex;gap:12px;margin-top:32px}
+.social-link{width:40px;height:40px;border:1px solid rgba(255,255,255,.15);border-radius:2px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.9rem;transition:all .2s}
+.social-link:hover{border-color:var(--accent);color:var(--accent)}
+.contact-form-wrap{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:40px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px}
+.form-control{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:2px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:.93rem;color:#fff;transition:border-color .2s;outline:none}
+.form-control::placeholder{color:rgba(255,255,255,.3)}
+.form-control:focus{border-color:var(--accent)}
+textarea.form-control{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.whatsapp-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;border-radius:2px;font-weight:500;font-size:.9rem;transition:all .25s;border:none;cursor:pointer;text-decoration:none;margin-bottom:12px;width:100%;justify-content:center}
+.whatsapp-btn:hover{background:#1ebe5d;transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:#111d33;padding:48px 24px 32px;text-align:center}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px}
+.footer-logo{display:flex;align-items:center;gap:12px}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.footer-links a{font-size:.83rem;color:rgba(255,255,255,.45);transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-copy span{color:var(--accent)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE NAV */
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--primary);padding:24px;z-index:999;border-top:1px solid rgba(255,255,255,.08);flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 16px;color:rgba(255,255,255,.75);font-size:.95rem;border-radius:2px;transition:all .2s}
+.mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--accent)}
+.mobile-menu .btn-gold{margin-top:8px;justify-content:center}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}.trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:48px;padding:56px 0}.hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr;gap:48px}.about-image-wrap{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .services-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr;gap:40px}.process-steps::before{display:none}
+  .testimonials-grid{grid-template-columns:1fr}
+  .section{padding:72px 0}
+  .hero-stats{gap:24px;flex-wrap:wrap}
+  .hero-actions{flex-direction:column}.hero-actions .btn{width:100%;justify-content:center}
+  .form-row{grid-template-columns:1fr}.contact-form-wrap{padding:24px}
+  .about-badge{display:none}
+}
+@media(max-width:480px){.trust-grid{grid-template-columns:1fr}.hero h1{font-size:2rem}.section-title{font-size:1.7rem}}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-monogram">MTK</div>
+      <div class="logo-text">
+        <span class="logo-name">M. Tahir Khan</span>
+        <span class="logo-title">Advocate &amp; Tax Consultant</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="btn btn-gold nav-cta">Free Consultation</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contact" class="btn btn-gold" onclick="closeMobile()">Book Free Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Advocate &amp; Tax Consultant — Pakistan</div>
+        <h1>Your Legal &amp; Tax Matters,<br><em>Resolved.</em></h1>
+        <p class="hero-sub">Facing an FBR notice? Starting a business? Need legal protection? Muhammad Tahir Khan brings years of courtroom and tax expertise directly to your door — with clarity, confidentiality, and results.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/92XXXXXXXXXX" class="btn btn-gold" target="_blank">
+            <i class="fab fa-whatsapp"></i> Book a Free Consultation
+          </a>
+          <a href="#services" class="btn btn-outline">
+            <i class="fas fa-th-large"></i> View Services
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Cases Handled</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">12+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">98%</div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="notice-banner">
+          <i class="fas fa-shield-halved"></i>
+          <p><strong>FBR Notice Received?</strong> Don't panic — we've handled hundreds of audit notices with successful outcomes.</p>
+        </div>
+        <div class="hero-card-main">
+          <div class="card-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Comprehensive Legal &amp; Tax Services</h3>
+          <p>From business registration to High Court representation — one trusted advisor for all your legal and fiscal needs in Pakistan.</p>
+        </div>
+        <div class="hero-cards-row">
+          <div class="hero-mini-card">
+            <div class="mini-icon"><i class="fas fa-receipt"></i></div>
+            <strong>Tax Returns</strong>
+            <p>Income, Sales &amp; Wealth Statements</p>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-icon"><i class="fas fa-building"></i></div>
+            <strong>Company Formation</strong>
+            <p>SECP, NTN &amp; STRN Registration</p>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-icon"><i class="fas fa-gavel"></i></div>
+            <strong>Tax Appeals</strong>
+            <p>Commissioner IR &amp; ATIR Tribunals</p>
+          </div>
+          <div class="hero-mini-card">
+            <div class="mini-icon"><i class="fas fa-file-contract"></i></div>
+            <strong>Legal Drafting</strong>
+            <p>Contracts, Notices &amp; Agreements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">Practice Areas</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">A full-spectrum legal and tax practice designed for individuals, businesses, and overseas Pakistanis navigating complex regulatory environments.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-building-columns"></i></div>
+        <h3>Business Registration</h3>
+        <p>Complete business setup including SECP incorporation, NTN registration, and STRN for sales tax compliance from day one.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Income &amp; Sales Tax Returns</h3>
+        <p>Accurate and timely filing of annual income tax returns and monthly/quarterly sales tax returns for individuals and companies.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-bell-slash"></i></div>
+        <h3>FBR Audit Notice Replies</h3>
+        <p>Professional, well-documented responses to FBR audit and assessment notices — protecting you from penalties and excess demands.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-gavel"></i></div>
+        <h3>Tax Appeals</h3>
+        <p>Representation before Commissioner (IR) Appeals and Appellate Tribunal Inland Revenue (ATIR) to contest unfair tax orders.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-percent"></i></div>
+        <h3>Withholding Tax Statements</h3>
+        <p>Preparation and filing of monthly WHT statements and annual withholding tax returns as required by the FBR.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-wallet"></i></div>
+        <h3>Wealth Statement Filing</h3>
+        <p>Comprehensive wealth reconciliation and annual wealth statement preparation to keep your tax profile compliant and accurate.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Company Formation &amp; Secretarial</h3>
+        <p>End-to-end corporate setup: SECP filing, MOA drafting, board resolutions, annual returns, and ongoing secretarial services.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-registered"></i></div>
+        <h3>Trademark &amp; IP Registration</h3>
+        <p>Brand protection through trademark registration with the Intellectual Property Organization of Pakistan (IPO-Pakistan).</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>FBR Compliance &amp; Penalty Waiver</h3>
+        <p>Penalty waiver applications, default surcharge reduction, and FBR compliance regularization for businesses and individuals.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+        <h3>Legal Drafting</h3>
+        <p>Professionally drafted contracts, partnership agreements, MOUs, rental deeds, and legal notices tailored to your needs.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-heart"></i></div>
+        <h3>Family Law</h3>
+        <p>Sensitive handling of divorce proceedings, maintenance claims, child custody, and family court representation with full discretion.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-scale-balanced"></i></div>
+        <h3>Court Representation</h3>
+        <p>Qualified representation before Civil Courts, Tax Tribunals, and High Court — a skilled advocate in your corner when it matters most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section section-alt" id="why">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Why Work With Me</span>
+      <h2 class="section-title">The Difference You'll Notice</h2>
+      <div class="section-line" style="margin:0 auto 16px"></div>
+    </div>
+    <div class="trust-grid" style="margin-top:56px">
+      <div class="trust-card reveal">
+        <div class="trust-icon"><i class="fas fa-lock"></i></div>
+        <h3>Strictly Confidential</h3>
+        <p>All financial, tax, and personal matters are handled with complete discretion. Your privacy is never compromised.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon"><i class="fas fa-clock"></i></div>
+        <h3>Timely Delivery</h3>
+        <p>Deadlines are sacred in tax law. We track your filing dates, notice deadlines, and court hearings — no missed timelines.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon"><i class="fas fa-star"></i></div>
+        <h3>FBR-Level Expertise</h3>
+        <p>Deep knowledge of FBR regulations, SECP requirements, and tax code — built through years of direct practice, not theory.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Proven Track Record</h3>
+        <p>Hundreds of successfully resolved tax cases, company registrations, and court matters across Pakistan's legal system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-image-placeholder">
+          <i class="fas fa-user-tie" style="font-size:80px;opacity:0.12;position:relative;z-index:1"></i>
+          <p style="font-size:.85rem;letter-spacing:.1em;opacity:0.25;margin-top:16px;font-family:'DM Sans',sans-serif;position:relative;z-index:1">Professional Photo</p>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">12+</div>
+          <div class="about-badge-text">Years of<br>Practice</div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <span class="section-label">About the Advocate</span>
+        <h2 class="section-title">Muhammad Tahir Khan</h2>
+        <div class="section-line"></div>
+        <p class="about-bio">Muhammad Tahir Khan is an enrolled Advocate and registered Tax Consultant based in Pakistan, with over a decade of hands-on experience navigating the country's legal and tax landscape. He has represented clients before Civil Courts, Tax Appellate Tribunals, and the High Court, and has built a reputation for clear advice, timely action, and results-driven practice.</p>
+        <p class="about-bio">His practice covers the full spectrum — from helping first-time business owners register their companies correctly, to defending established firms against complex FBR audit proceedings. He is particularly trusted by overseas Pakistanis who need reliable, responsive legal and tax support from abroad.</p>
+        <div class="credentials">
+          <span class="credential-tag"><i class="fas fa-certificate"></i> Enrolled Advocate</span>
+          <span class="credential-tag"><i class="fas fa-building-columns"></i> FBR Registered</span>
+          <span class="credential-tag"><i class="fas fa-scale-balanced"></i> ATIR Practitioner</span>
+          <span class="credential-tag"><i class="fas fa-briefcase"></i> SECP Registered</span>
+          <span class="credential-tag"><i class="fas fa-gavel"></i> High Court Bar Member</span>
+        </div>
+        <a href="#contact" class="btn btn-gold">
+          <i class="fas fa-calendar-check"></i> Schedule a Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Simple. Clear. Resolved.</h2>
+      <div class="section-line" style="margin:0 auto 16px"></div>
+      <p class="section-subtitle" style="margin:0 auto 64px;text-align:center">Getting legal or tax help shouldn't be complicated. Here's how we work together — from your first message to full resolution.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-number">01<div class="step-icon"><i class="fas fa-comments"></i></div></div>
+        <h3>Free Consultation</h3>
+        <p>Tell us your situation — tax notice, business idea, legal matter. We listen, assess, and give you a clear picture with no obligation.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">02<div class="step-icon"><i class="fas fa-folder-open"></i></div></div>
+        <h3>Documentation &amp; Strategy</h3>
+        <p>We collect required documents, build the right response or filing strategy, and keep you informed at every step — no surprises.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">03<div class="step-icon"><i class="fas fa-check"></i></div></div>
+        <h3>Resolution &amp; Follow-Through</h3>
+        <p>Your matter is filed, resolved, or represented — with full follow-through until completion. We don't disappear after step one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Client Feedback</span>
+      <h2 class="section-title">Trusted Across Pakistan</h2>
+      <div class="section-line" style="margin:0 auto 16px"></div>
+    </div>
+    <div class="testimonials-grid" style="margin-top:56px">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We received an FBR audit notice and panicked. Tahir Sahib handled everything — the reply, the documentation, follow-ups — and the matter was closed without any penalty. Absolute professional."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AK</div>
+          <div>
+            <div class="author-name">Ahmed Khalid</div>
+            <div class="author-label">SME Business Owner, Lahore</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"As a salaried person, I had no idea I needed to file returns. Tahir bhai explained everything clearly, filed my last three years' returns, and even got me a refund I didn't know I was owed."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <div class="author-name">Sana Rehman</div>
+            <div class="author-label">Government Employee, Islamabad</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I'm based in the UAE and needed to register my business in Pakistan remotely. Tahir Sahib managed everything end-to-end. Communication was prompt and the work was flawless."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">ZM</div>
+          <div>
+            <div class="author-name">Zubair Mirza</div>
+            <div class="author-label">Overseas Pakistani, Dubai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto" class="reveal">
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-title">Frequently Asked</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I need to file a tax return if I'm a salaried person?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. In Pakistan, if your annual income exceeds the taxable threshold, you are legally required to file an income tax return — even if tax has already been deducted at source by your employer. Filing also keeps your name on the Active Taxpayer List (ATL), which offers significant benefits including reduced withholding tax rates on banking transactions, property, and vehicles.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens if I ignore an FBR audit notice?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Ignoring an FBR audit or assessment notice is one of the most costly mistakes a taxpayer can make. FBR can proceed with an ex-parte assessment — assigning you a tax liability based on their own estimates, often far higher than what is actually owed. This can lead to recovery action, freezing of bank accounts, and penalty surcharges. Always respond within the deadline, through a qualified tax consultant.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does company registration with SECP take?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>A private limited company registration through SECP's eServices portal typically takes 3–7 working days once all documents are in order. This includes name reservation, submission of the Memorandum and Articles of Association, and payment of registration fees. We handle the entire process and also obtain your NTN and STRN as part of the complete business setup package.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I get help if I'm an overseas Pakistani?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. We regularly assist overseas Pakistanis with business registration, tax return filing, property-related tax compliance, wealth statements, and power of attorney matters — all handled remotely through secure document sharing and WhatsApp communication. You do not need to be present in Pakistan for most filings and registrations.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What documents do I need for income tax return filing?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>For a salaried individual: salary certificate / pay slips, CNIC, bank statements, details of any property or vehicles owned, and the previous year's tax return (if any). For a business owner: additionally, profit &amp; loss accounts and details of assets and liabilities. During your free consultation, we'll provide a precise checklist based on your specific situation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Resolve Your Matter</h2>
+        <div class="section-line"></div>
+        <p class="contact-sub">Whether you have a tax deadline tomorrow or a legal dispute pending for months — the first step is a conversation. Reach out for a free, no-obligation consultation.</p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="contact-detail-label">WhatsApp</div>
+              <div class="contact-detail-value"><a href="https://wa.me/92XXXXXXXXXX" target="_blank">+92 XXX XXX XXXX</a></div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value"><a href="mailto:info@mtklegal.pk">info@mtklegal.pk</a></div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <div class="contact-detail-label">Office</div>
+              <div class="contact-detail-value">Pakistan (City, Province)</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="contact-detail-label">Office Hours</div>
+              <div class="contact-detail-value">Mon – Sat, 9:00 AM – 6:00 PM PKT</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/muhammad-tahir-khan-9682bb1b4/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/92XXXXXXXXXX" target="_blank" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <a href="https://wa.me/92XXXXXXXXXX" class="whatsapp-btn" target="_blank">
+          <i class="fab fa-whatsapp" style="font-size:1.15rem"></i>
+          Chat on WhatsApp — Fastest Response
+        </a>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" name="name" class="form-control" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="phone" class="form-control" placeholder="+92 XXX XXXXXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service Needed</label>
+            <select name="service" class="form-control" style="cursor:pointer">
+              <option value="" disabled selected>Select a service…</option>
+              <option>Tax Return Filing</option>
+              <option>FBR Audit Notice Reply</option>
+              <option>Tax Appeal (ATIR)</option>
+              <option>Business / Company Registration</option>
+              <option>Wealth Statement</option>
+              <option>Legal Drafting</option>
+              <option>Court Representation</option>
+              <option>Trademark Registration</option>
+              <option>Family Law</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Brief Description</label>
+            <textarea name="message" class="form-control" placeholder="Briefly describe your situation…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="logo-monogram">MTK</div>
+      <div class="logo-text">
+        <span class="logo-name">Muhammad Tahir Khan</span>
+        <span class="logo-title" style="color:rgba(255,255,255,.35)">Advocate &amp; Tax Consultant</span>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/muhammad-tahir-khan-9682bb1b4/" target="_blank">LinkedIn</a>
+    </nav>
+    <p class="footer-copy">
+      &copy; 2025 Muhammad Tahir Khan — Advocate &amp; Tax Consultant. All rights reserved.<br>
+      <span>Enrolled Advocate | FBR Registered | SECP Practitioner — Pakistan</span>
+    </p>
+  </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), (i % 4) * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
